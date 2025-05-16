@@ -6,5 +6,5 @@ export const fetchQuote = async (symbol: string) => {
   const result = await fetch(
     `${API_URL}quote?symbol=${symbol}&token=${API_KEY}`
   );
-  return result.json;
+  return result.json();
 };
