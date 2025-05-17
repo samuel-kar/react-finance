@@ -12,6 +12,8 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SearchImport } from './routes/search'
+import { Route as CalculatorImport } from './routes/calculator'
+import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -19,6 +21,18 @@ import { Route as IndexImport } from './routes/index'
 const SearchRoute = SearchImport.update({
   id: '/search',
   path: '/search',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CalculatorRoute = CalculatorImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutRoute = AboutImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +53,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorImport
+      parentRoute: typeof rootRoute
+    }
     '/search': {
       id: '/search'
       path: '/search'
@@ -53,36 +81,46 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/search': typeof SearchRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/search': typeof SearchRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calculator': typeof CalculatorRoute
   '/search': typeof SearchRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/search'
+  fullPaths: '/' | '/about' | '/calculator' | '/search'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/search'
-  id: '__root__' | '/' | '/search'
+  to: '/' | '/about' | '/calculator' | '/search'
+  id: '__root__' | '/' | '/about' | '/calculator' | '/search'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CalculatorRoute: typeof CalculatorRoute
   SearchRoute: typeof SearchRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CalculatorRoute: CalculatorRoute,
   SearchRoute: SearchRoute,
 }
 
@@ -97,11 +135,19 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/about",
+        "/calculator",
         "/search"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/about": {
+      "filePath": "about.tsx"
+    },
+    "/calculator": {
+      "filePath": "calculator.tsx"
     },
     "/search": {
       "filePath": "search.tsx"
