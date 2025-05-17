@@ -1,10 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "../logo.svg";
 import "../App.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { StockMarketIndex } from "@/components/Stockmarketindex";
 
-const queryClient = new QueryClient();
+import { StockMarketIndex } from "@/components/Stockmarketindex";
 
 export const Route = createFileRoute("/")({
   component: App,
@@ -26,9 +24,8 @@ function App() {
         >
           Learn React
         </a>
-        <QueryClientProvider client={queryClient}>
-          <StockMarketIndex symbol="MSFT" />
-        </QueryClientProvider>
+
+        <StockMarketIndex symbol="MSFT" />
         <a
           className="App-link"
           href="https://tanstack.com"
