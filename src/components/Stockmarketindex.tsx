@@ -1,8 +1,6 @@
 import { fetchQuote } from "../utils/api";
 import { useQuery } from "@tanstack/react-query";
 
-type quote = {};
-
 export const StockMarketIndex = ({ symbol }: { symbol: string }) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["quote", symbol],
