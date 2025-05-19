@@ -7,5 +7,9 @@ export const Route = createFileRoute("/calculator")({
 });
 
 function RouteComponent() {
-  return <Savingcalculator />;
+  return (
+    <div className="flex justify-center mt-20 px-4">
+      <Savingcalculator />
+    </div>
+  );
 }

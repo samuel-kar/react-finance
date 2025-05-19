@@ -8,7 +8,7 @@ export const Navbar = () => {
       </Link>
 
       <Link to="/calculator" className="block text-white hover:underline">
-        Calculator
+        CI-Calculator
       </Link>
 
       <Link to="/search" className="block text-white hover:underline">

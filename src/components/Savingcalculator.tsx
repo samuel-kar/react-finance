@@ -15,45 +15,49 @@ export const Savingcalculator = () => {
   );
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Saving Calculator</h1>
-      <div className="mb-4">
-        <label className="block mb-2">Start Value:</label>
-        <input
-          type="number"
-          value={startValue}
-          onChange={(e) => setStartValue(Number(e.target.value))}
-          className="border p-2"
-        />
+    <div className="bg-white rounded-xl p-6 shadow-md max-w-md w-full">
+      <div className="p-4">
+        <h1 className="text-2xl font-bold mb-4">
+          Compound Interest Calculator
+        </h1>
+        <div className="mb-4">
+          <label className="block mb-2">Start Value:</label>
+          <input
+            type="number"
+            value={startValue}
+            onChange={(e) => setStartValue(Number(e.target.value))}
+            className="border p-2"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Monthly Input:</label>
+          <input
+            type="number"
+            value={monthlyInput}
+            onChange={(e) => setMonthlyInput(Number(e.target.value))}
+            className="border p-2"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Annual Rate (%):</label>
+          <input
+            type="number"
+            value={annualRate}
+            onChange={(e) => setAnnualRate(Number(e.target.value))}
+            className="border p-2"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Years:</label>
+          <input
+            type="number"
+            value={years}
+            onChange={(e) => setYears(Number(e.target.value))}
+            className="border p-2"
+          />
+        </div>
+        <h2 className="text-xl font-bold">Result: {result.toFixed(2)}</h2>
       </div>
-      <div className="mb-4">
-        <label className="block mb-2">Monthly Input:</label>
-        <input
-          type="number"
-          value={monthlyInput}
-          onChange={(e) => setMonthlyInput(Number(e.target.value))}
-          className="border p-2"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2">Annual Rate (%):</label>
-        <input
-          type="number"
-          value={annualRate}
-          onChange={(e) => setAnnualRate(Number(e.target.value))}
-          className="border p-2"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2">Years:</label>
-        <input
-          type="number"
-          value={years}
-          onChange={(e) => setYears(Number(e.target.value))}
-          className="border p-2"
-        />
-      </div>
-      <h2 className="text-xl font-bold">Result: {result.toFixed(2)}</h2>
     </div>
   );
 };
