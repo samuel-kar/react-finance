@@ -11,9 +11,6 @@ export const Route = createFileRoute("/")({
 function App() {
   return (
     <div className="App">
-      <div className="bg-red-500 text-white p-10 text-3xl">
-        FUNKAR TAILWIND NU?
-      </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -27,9 +24,7 @@ function App() {
         >
           Learn React
         </a>
-        <div className="bg-green-500 text-white p-10 text-3xl">
-          FUNKAR TAILWIND NU?
-        </div>
+
         <StockMarketIndex symbol="MSFT" />
         <a
           className="App-link"
