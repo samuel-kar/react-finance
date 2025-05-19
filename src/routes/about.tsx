@@ -5,5 +5,9 @@ export const Route = createFileRoute("/about")({
 });
 
 function RouteComponent() {
-  return <div className="p-4 text-xl">Hello "/about"!</div>;
+  return (
+    <div className="flex justify-center mt-20 px-4">
+      <p>123</p>
+    </div>
+  );
 }

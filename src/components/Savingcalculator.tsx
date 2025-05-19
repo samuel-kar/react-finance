@@ -15,7 +15,7 @@ export const Savingcalculator = () => {
   );
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md max-w-md w-full">
+    <div className="bg-gray-200 rounded-xl p-6 shadow-md max-w-md w-full">
       <div className="p-4">
         <h1 className="text-2xl font-bold mb-4">
           Compound Interest Calculator
@@ -39,7 +39,7 @@ export const Savingcalculator = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-2">Annual Rate (%):</label>
+          <label className="block mb-2">Annual Growth Rate (%):</label>
           <input
             type="number"
             value={annualRate}
@@ -56,7 +56,7 @@ export const Savingcalculator = () => {
             className="border p-2"
           />
         </div>
-        <h2 className="text-xl font-bold">Result: {result.toFixed(2)}</h2>
+        <h2 className="text-xl font-bold">Result: {result.toFixed(2)}$</h2>
       </div>
     </div>
   );

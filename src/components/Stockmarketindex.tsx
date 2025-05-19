@@ -13,7 +13,7 @@ export const StockMarketIndex = ({ symbol }: { symbol: string }) => {
   if (error) return <div>Something went wrong</div>;
 
   return (
-    <div>
+    <div className="bg-gray-200 rounded-xl p-6 shadow-md max-w-md w-full">
       <h3>{symbol}</h3>
       <p>Kurs: {data.c}</p>
       <p>Öppning: {data.o}</p>
