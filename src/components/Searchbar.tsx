@@ -16,13 +16,13 @@ export const SearchBar = () => {
     <form onSubmit={handleSubmit} className="flex space-x-2">
       <input
         type="text"
-        placeholder="Search for ticker (like MSFT)"
+        placeholder="Search ticker (e.g. MSFT)"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        className="border border-gray-300 p-2 rounded"
+        className="border border-gray-300 p-2 rounded bg-white"
       />
       <button type="submit" className="bg-blue-500 text-white px-4 rounded">
-        Sök
+        Search
       </button>
     </form>
   );
