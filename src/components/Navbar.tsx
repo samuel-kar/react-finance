@@ -11,7 +11,11 @@ export const Navbar = () => {
         CI-Calculator
       </Link>
 
-      <Link to="/search" className="block text-white hover:underline">
+      <Link
+        to="/search"
+        search={{ symbol: "" }}
+        className="block text-white hover:underline"
+      >
         Search stock
       </Link>
 
