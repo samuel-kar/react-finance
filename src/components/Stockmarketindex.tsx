@@ -9,8 +9,8 @@ export const StockMarketIndex = ({ symbol }: { symbol: string }) => {
     queryFn: () => fetchQuote(symbol),
   });
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Something went wrong</div>;
+  if (isLoading) return <div className="text-white">Loading...</div>;
+  if (error) return <div className="text-white">Something went wrong</div>;
 
   return (
     <div className="bg-gray-200 rounded-xl p-6 shadow-md max-w-md w-full">
