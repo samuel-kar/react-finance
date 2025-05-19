@@ -10,11 +10,12 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <QueryClientProvider client={queryClient}>
-        <div className="min-h-screen flex flex-col">
+        <div
+          className="min-h-screen flex flex-col bg-cover bg-center"
+          style={{ backgroundImage: "url('wave-haikei.png')" }}
+        >
           <Navbar />
-          <main className="flex-1">
-            <Outlet />
-          </main>
+          <Outlet />
           <TanStackRouterDevtools />
         </div>
       </QueryClientProvider>
