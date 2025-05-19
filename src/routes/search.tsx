@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { StockMarketIndex } from "@/components/Stockmarketindex";
+import { Stock } from "@/components/Stock";
 import { SearchBar } from "@/components/Searchbar";
 
 export const Route = createFileRoute("/search")({
@@ -15,7 +15,7 @@ function RouteComponent() {
   return (
     <div className="flex flex-col items-center mt-20 px-4 space-y-8">
       <SearchBar />
-      {symbol && <StockMarketIndex symbol={symbol} />}
+      {symbol && <Stock symbol={symbol} />}
     </div>
   );
 }
